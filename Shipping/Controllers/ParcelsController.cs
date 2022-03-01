@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Parcel.Models;
+using Parcel.Shipping;
 using System.Collections.Generic;
 
-namespace Parcel.Controllers
+namespace Shipping.Controllers
 {
   public class ParcelsController : Controller
   {

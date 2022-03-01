@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace Parcel.Models
+namespace Shipping.Models
 {
-  public class Dimension
+  public class Parcel
   {
     public int Length{get;set;}
     public int Height { get; set; }
@@ -11,7 +11,7 @@ namespace Parcel.Models
     public int Weight{get;set;}
    //private static List<Parcel> _dimension = new List<Parcel> {};
 
-    public Dimension(int length, int height, int depth, int weight)
+    public Parcel(int length, int height, int depth, int weight)
     {
       Length = length;
       Height = height;
