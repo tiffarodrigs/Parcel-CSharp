@@ -6,10 +6,26 @@ namespace Parcel.Controllers
 {
   public class ParcelsController : Controller
   {
-    [HttpGet("/parcels")]
+
+    [HttpGet("/parcel")]
+    public ActionResult Index()
     {
-    List<Parcel> allParcels = Parcel.GetAll();
-    return View(allParcels);
+      
+     // int Vol= Parcel.Volume();
+      return View();
+    }
+    [HttpGet("/parcels/new")]
+    public ActionResult Parcel()
+    {
+
+      return View();
+    }
+    [HttpPost("/parcel")]
+    public ActionResult ParcelCreate(int length, int height, int depth, int weight)
+    {
+      Dimension parcelObj = new Dimension(length,height,depth,weight);
+      int vol= parcelObj.Volume();
+      return RedirectToAction("Index");
     }
   }
 }
