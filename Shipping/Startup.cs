@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Parcel
+namespace Shipping
 {
   public class Startup
   {
@@ -16,7 +16,7 @@ namespace Parcel
       Configuration = builder.Build();
     }
 
-    public IConfigurationRoot Configuration { get; }
+    public IConfigurationRoot Configuration { get; set;}
 
     public void ConfigureServices(IServiceCollection services)
     {
@@ -35,7 +35,7 @@ namespace Parcel
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Hello World!");
+        await context.Response.WriteAsync("Build Error");
       });
     }
   }

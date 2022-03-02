@@ -9,7 +9,8 @@ namespace Shipping.Models
     public int Height { get; set; }
     public int Depth { get; set; }
     public int Weight{get;set;}
-   //private static List<Parcel> _dimension = new List<Parcel> {};
+
+    private static List<Parcel> _instances = new List<Parcel> { };
 
     public Parcel(int length, int height, int depth, int weight)
     {
@@ -17,15 +18,21 @@ namespace Shipping.Models
       Height = height;
       Depth = depth;
       Weight = weight;
-    //  _dimension.Add(this);
+     _instances.Add(this);
     }
-// public static List<Item> GetAll()
-//     {
-//     return _instances;
-//     }
+
+    public static List<Parcel> GetAll()
+    {
+    return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
     public  int Volume()
     {
-      //Console.WriteLine(_dimension);
       int volume = (Length)*(Height)*(Depth);
       return volume;
     }
